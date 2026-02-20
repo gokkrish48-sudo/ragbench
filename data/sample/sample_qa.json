@@ -1,0 +1,27 @@
+[
+  {
+    "query": "What is retrieval-augmented generation?",
+    "relevant_ids": ["doc0_chunk0", "doc0_chunk512"],
+    "answer": "RAG combines retrieval of relevant documents with LLM generation to produce grounded answers."
+  },
+  {
+    "query": "How does BM25 scoring work?",
+    "relevant_ids": ["doc1_chunk0", "doc1_chunk512"],
+    "answer": "BM25 uses term frequency and inverse document frequency with saturation to score document relevance."
+  },
+  {
+    "query": "What are the advantages of hybrid retrieval?",
+    "relevant_ids": ["doc2_chunk0", "doc2_chunk512"],
+    "answer": "Hybrid retrieval combines sparse keyword matching with dense semantic search for better coverage."
+  },
+  {
+    "query": "Explain vector similarity search with FAISS",
+    "relevant_ids": ["doc3_chunk0"],
+    "answer": "FAISS performs approximate nearest neighbor search on dense vectors for fast retrieval."
+  },
+  {
+    "query": "What is reciprocal rank fusion?",
+    "relevant_ids": ["doc4_chunk0", "doc4_chunk512"],
+    "answer": "RRF merges ranked lists from multiple retrievers using reciprocal rank weighting."
+  }
+]

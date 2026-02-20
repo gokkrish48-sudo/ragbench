@@ -1,0 +1,36 @@
+experiment:
+  name: "ragbench-scale-test"
+  tracking_uri: "mlruns/"
+
+ingest:
+  chunk_size: 512
+  chunk_overlap: 64
+  embedding_model: "sentence-transformers/all-MiniLM-L6-v2"
+  batch_size: 512
+
+retrievers:
+  - type: bm25
+    top_k: 10
+  - type: dense
+    top_k: 10
+    index: faiss_hnsw
+  - type: hybrid
+    top_k: 10
+    alpha: 0.6
+
+evaluate:
+  metrics:
+    - precision
+    - recall
+    - ndcg
+    - mrr
+  k_values: [5, 10]
+
+optimize:
+  method: grid
+  n_trials: 100
+  metric: "ndcg@5"
+  search_space:
+    chunk_size: [256, 512, 1024, 2048]
+    top_k: [5, 10, 20, 50]
+    alpha: [0.3, 0.5, 0.7]
